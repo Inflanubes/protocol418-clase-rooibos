@@ -1,7 +1,13 @@
-import { StubSlide } from '@/components/deck/StubSlide';
-import { slideByUrl } from '@/lib/slides';
+import { SlideShell } from '@/components/deck/SlideShell';
+import { Stamp } from '@/components/deck/Stamp';
+import slideStyles from '@/components/deck/slide.module.css';
 
 export default function Page() {
-  const slide = slideByUrl('/stamp-2')!;
-  return <StubSlide framing={slide.framing} title={slide.title} />;
+  return (
+    <SlideShell>
+      <div className={slideStyles.center}>
+        <Stamp mission={2} />
+      </div>
+    </SlideShell>
+  );
 }
