@@ -1,0 +1,84 @@
+/* /fire is the one deck exception: dark background instead of the default
+   cream. Scoped locally to this route via the inverse tokens, not by
+   overriding the global theme. */
+
+.dark {
+  position: fixed;
+  inset: 0;
+  background: var(--color-bg-inverse);
+  color: var(--color-text-inverse);
+}
+
+.stack {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-8);
+  text-align: center;
+}
+
+.title {
+  color: var(--color-text-inverse);
+}
+
+.caption {
+  font-family: var(--font-mono);
+  font-size: var(--fs-body-lg);
+  color: var(--color-text-inverse);
+  opacity: 0.7;
+}
+
+.flame {
+  position: relative;
+  width: clamp(200px, 26vw, 320px);
+  height: clamp(240px, 32vw, 380px);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.tongue {
+  position: absolute;
+  bottom: 0;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  background: radial-gradient(circle at 50% 75%, var(--color-flame-core), var(--color-flame-mid) 55%, var(--color-flame-edge) 100%);
+  transform-origin: bottom center;
+  animation: flicker 900ms ease-in-out infinite alternate;
+}
+
+.tongue1 {
+  width: 70%;
+  height: 100%;
+  left: 15%;
+  animation-delay: 0ms;
+}
+
+.tongue2 {
+  width: 46%;
+  height: 78%;
+  left: 6%;
+  opacity: 0.9;
+  animation-delay: 200ms;
+}
+
+.tongue3 {
+  width: 46%;
+  height: 78%;
+  right: 6%;
+  left: auto;
+  opacity: 0.9;
+  animation-delay: 400ms;
+}
+
+@keyframes flicker {
+  from { transform: scaleY(1) scaleX(1) rotate(-1.5deg); }
+  to   { transform: scaleY(1.08) scaleX(0.94) rotate(1.5deg); }
+}
+
+/* No reduced-motion block on purpose: presenter's Chrome misreports it — see earl-grey caveat */
+
+@media (max-width: 720px) {
+  .flame { width: 60vw; height: 46vh; }
+}

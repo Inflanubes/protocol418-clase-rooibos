@@ -1,0 +1,7 @@
+.soon {
+  font-family: var(--font-mono);
+  font-size: var(--fs-body-lg);
+  color: var(--color-text-muted);
+  letter-spacing: var(--tracking-uppercase);
+  text-transform: uppercase;
+}

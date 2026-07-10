@@ -1,0 +1,63 @@
+/* styles/tokens.css — single source of truth for brand tokens
+   Rooibos theme = inverse of earl-grey's dark deck: cream default background,
+   dark text, orange accents. Kid-brightened per spec (bigger type, lighter
+   surfaces) — this is an Arkeidia artifact, not a brand-guideline artifact. */
+:root {
+  /* Colors — default (cream) */
+  --color-bg:          #F0EBE2;
+  --color-surface:     #FFFFFF;
+  --color-border:      #DDD2BE;
+  --color-accent:      #EA5A1F;
+  --color-text:        #0B0B0B;
+  --color-text-muted:  #7A7A7A;
+
+  /* Colors — inverse (dark), used only by /fire */
+  --color-bg-inverse:      #0B0B0B;
+  --color-surface-inverse: #1F1F1F;
+  --color-border-inverse:  #1F1F1F;
+  --color-text-inverse:    #F0EBE2;
+
+  /* Flame gradient stops (fire slide CSS illustration) */
+  --color-flame-core: #FFD27A;
+  --color-flame-mid:  #FF8A3D;
+  --color-flame-edge: #EA5A1F;
+
+  /* Type families — alimentadas por next/font en app/layout.tsx */
+  --font-display: var(--font-space-grotesk), system-ui, sans-serif;
+  --font-body:    var(--font-inter), system-ui, sans-serif;
+  --font-mono:    var(--font-jetbrains-mono), ui-monospace, monospace;
+
+  /* Type scale — XXL, legible al fondo de la sala a 1280x720 (~2x earl-grey) */
+  --fs-display:  160px;
+  --fs-h1:       88px;
+  --fs-h2:       44px;
+  --fs-body-lg:  28px;
+  --fs-body:     22px;
+  --fs-small:    18px;
+  --fs-caption:  16px;
+  --fs-eyebrow:  16px;
+
+  /* Tracking */
+  --tracking-tight:     -0.01em;
+  --tracking-display:    0.05em;
+  --tracking-uppercase:  0.15em;
+  --tracking-eyebrow:    0.25em;
+  --tracking-tagline:    0.3em;
+
+  /* Spacing (8pt grid) */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-6:  24px;
+  --space-8:  32px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+
+  /* Radii */
+  --radius-sm:  4px;
+  --radius:     8px;
+  --radius-lg:  12px;
+  --radius-xl:  16px;
+}

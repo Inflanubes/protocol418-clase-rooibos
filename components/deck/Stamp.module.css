@@ -1,0 +1,56 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-8);
+}
+
+.badge {
+  position: relative;
+  width: clamp(220px, 28vw, 340px);
+  height: clamp(220px, 28vw, 340px);
+  border-radius: 50%;
+  background: var(--color-accent);
+  display: grid;
+  place-items: center;
+  transform: rotate(-6deg);
+  animation: stampIn 560ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  box-shadow: 0 12px 0 0 rgba(11, 11, 11, 0.06);
+}
+
+.ring {
+  position: absolute;
+  inset: 14px;
+  border-radius: 50%;
+  border: 3px dashed var(--color-bg);
+  opacity: 0.85;
+}
+
+.star {
+  font-size: clamp(4rem, 9vw, 7rem);
+  color: var(--color-bg);
+  line-height: 1;
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: var(--fs-eyebrow);
+  color: var(--color-text-muted);
+  letter-spacing: var(--tracking-eyebrow);
+  font-weight: 700;
+}
+
+.time {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 8vw, var(--fs-h1));
+  color: var(--color-text);
+  letter-spacing: var(--tracking-tight);
+  font-weight: 700;
+}
+
+@keyframes stampIn {
+  from { opacity: 0; transform: rotate(-6deg) scale(1.6); }
+  to   { opacity: 1; transform: rotate(-6deg) scale(1); }
+}
+
+/* No reduced-motion block on purpose: presenter's Chrome misreports it — see earl-grey caveat */

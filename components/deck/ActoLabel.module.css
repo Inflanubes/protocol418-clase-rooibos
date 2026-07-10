@@ -1,0 +1,7 @@
+.label {
+  font-family: var(--font-mono);
+  font-size: var(--fs-eyebrow);
+  color: var(--color-accent);
+  letter-spacing: var(--tracking-eyebrow);
+  font-weight: 700;
+}

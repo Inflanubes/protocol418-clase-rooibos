@@ -1,0 +1,61 @@
+/* Shared slide utility classes — XXL type scale, back-of-room legible at 1280x720 */
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 12vw, var(--fs-display));
+  color: var(--color-text);
+  letter-spacing: var(--tracking-tight);
+  line-height: 1.02;
+  font-weight: 700;
+}
+
+.lead {
+  font-family: var(--font-body);
+  font-size: var(--fs-body-lg);
+  color: var(--color-text-muted);
+  max-width: 60ch;
+  line-height: 1.5;
+}
+
+.punch {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 9vw, var(--fs-h1));
+  color: var(--color-accent);
+  letter-spacing: var(--tracking-tight);
+  line-height: 1;
+  font-weight: 700;
+}
+
+.caption {
+  font-family: var(--font-mono);
+  font-size: var(--fs-body-lg);
+  color: var(--color-text-muted);
+  letter-spacing: var(--tracking-tight);
+}
+
+.center {
+  display: grid;
+  place-items: center;
+  height: 100%;
+  text-align: center;
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-8);
+  text-align: center;
+}
+
+.note {
+  font-family: var(--font-mono);
+  font-size: var(--fs-small);
+  color: var(--color-text-muted);
+}
+
+@media (max-width: 720px) {
+  .stack {
+    gap: var(--space-6);
+  }
+}
