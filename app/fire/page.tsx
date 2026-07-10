@@ -15,7 +15,7 @@ export default function Page() {
             <span className={`${styles.tongue} ${styles.tongue2}`} />
             <span className={`${styles.tongue} ${styles.tongue3}`} />
           </div>
-          <p className={styles.caption}>that's why the game stops</p>
+          <p className={styles.caption}>that&apos;s why the game stops</p>
         </div>
       </SlideShell>
     </div>
