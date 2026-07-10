@@ -1,0 +1,33 @@
+.prompt {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: center;
+  gap: var(--space-3);
+}
+
+.blank {
+  display: inline-block;
+  min-width: 5.5ch;
+  text-align: left;
+  border-bottom: 6px solid var(--color-accent);
+  padding-bottom: var(--space-2);
+}
+
+.filled {
+  color: var(--color-accent);
+}
+
+.caption {
+  font-family: var(--font-mono);
+  font-size: var(--fs-body-lg);
+  color: var(--color-text-muted);
+  opacity: 0;
+  animation: revealCaption 480ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes revealCaption {
+  to { opacity: 1; }
+}
+
+/* No reduced-motion block on purpose: presenter's Chrome misreports it — see earl-grey caveat */
