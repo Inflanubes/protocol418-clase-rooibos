@@ -14,9 +14,12 @@ export const SLIDES: readonly Slide[] = [
   { id: 'cover',       url: '/',                position: 1,  title: 'Rooibos — Junior 418 Agents',   framing: '' },
   { id: 'agents',      url: '/agents',          position: 2,  title: 'You are agents now',            framing: '' },
   { id: 'mission1',    url: '/mission-1',       position: 3,  title: 'Mission 1',                     framing: 'MISSION 1' },
-  { id: 'cables',      url: '/cables',          position: 4,  title: 'The internet is underwater',    framing: '' },
+  // Performance order (per the class script): the server burns DURING the
+  // human-internet game, and the reveals (cloud, cables) come after — so
+  // /fire precedes /cloud and /cables. Do not "fix" this back to reveal-first.
+  { id: 'fire',        url: '/fire',            position: 4,  title: 'Server on fire',                framing: '' },
   { id: 'cloud',       url: '/cloud',           position: 5,  title: 'The cloud doesn\'t exist',       framing: '' },
-  { id: 'fire',        url: '/fire',            position: 6,  title: 'Server on fire',                framing: '' },
+  { id: 'cables',      url: '/cables',          position: 6,  title: 'The internet is underwater',    framing: '' },
   { id: 'stamp1',      url: '/stamp-1',         position: 7,  title: 'Mission 1 — stamp time',        framing: 'MISSION 1 COMPLETE' },
   { id: 'mission2',    url: '/mission-2',       position: 8,  title: 'Mission 2',                     framing: 'MISSION 2' },
   { id: 'predict',     url: '/predict',         position: 9,  title: 'Predict',                       framing: '' },
