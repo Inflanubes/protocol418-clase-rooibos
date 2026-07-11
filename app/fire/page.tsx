@@ -6,9 +6,11 @@ import styles from './fire.module.css';
 export default function Page() {
   const slide = slideByUrl('/fire')!;
   return (
-    <div className={styles.dark}>
+    <div className={styles.wrap}>
+      <div className={styles.glow} aria-hidden="true" />
       <SlideShell framing={slide.framing}>
         <div className={styles.stack}>
+          <span className={styles.alertTag}>⚠ system alert</span>
           <h1 className={`${slideStyles.title} ${styles.title}`}>SERVER ON FIRE!</h1>
           <div className={styles.flame} aria-hidden="true">
             <span className={`${styles.tongue} ${styles.tongue1}`} />

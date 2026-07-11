@@ -1,15 +1,32 @@
-/* /fire is the one deck exception: dark background instead of the default
-   cream. Scoped locally to this route via the inverse tokens, not by
-   overriding the global theme. */
+/* /fire was the deck's "dark exception" when the rest of the deck was
+   cream — a swapped background made it stand out. Now the whole deck is
+   dark, so a dark override reads as nothing. The slide flags itself
+   instead with 418/OS system-alert language: an orange/black alert tag
+   (mirrors Website/components/SystemAlert), a deeper chrome tone, and an
+   orange glow behind the flame — the flame itself stays on dark ground so
+   its own gradient (which ends in the same orange as the accent) keeps
+   its contrast instead of disappearing into an orange backdrop. */
 
-.dark {
+.wrap {
   position: fixed;
   inset: 0;
-  background: var(--color-bg-inverse);
-  color: var(--color-text-inverse);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-bg-deep);
+  overflow: hidden;
+}
+
+.glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 60%, var(--glow-accent), transparent 62%);
+  pointer-events: none;
 }
 
 .stack {
+  position: relative;
+  z-index: 1;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -19,15 +36,29 @@
   text-align: center;
 }
 
+.alertTag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  background: var(--alert-bg);
+  color: var(--alert-text);
+  font-family: var(--font-mono);
+  font-size: var(--fs-eyebrow);
+  font-weight: 700;
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius);
+}
+
 .title {
-  color: var(--color-text-inverse);
+  color: var(--color-text);
 }
 
 .caption {
   font-family: var(--font-mono);
   font-size: var(--fs-body-lg);
-  color: var(--color-text-inverse);
-  opacity: 0.7;
+  color: var(--color-text-muted);
 }
 
 .flame {
