@@ -9,7 +9,7 @@ export default function OG() {
     (
       <div
         style={{
-          background: '#F0EBE2',
+          background: '#0B0B0B',
           width: '100%',
           height: '100%',
           display: 'flex',
@@ -23,7 +23,7 @@ export default function OG() {
         <div style={{ fontSize: 240, color: '#EA5A1F', fontWeight: 700, lineHeight: 1 }}>
           {'<4|8>'}
         </div>
-        <div style={{ fontSize: 32, color: '#0B0B0B', letterSpacing: '0.05em' }}>
+        <div style={{ fontSize: 32, color: '#F0EBE2', letterSpacing: '0.05em' }}>
           ROOIBOS · JUNIOR 418 AGENTS
         </div>
         <div style={{ fontSize: 20, color: '#7A7A7A', letterSpacing: '0.3em', textTransform: 'uppercase' }}>

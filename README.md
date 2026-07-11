@@ -21,9 +21,11 @@ Abre `http://localhost:3000`.
 
 ## Tema
 
-Inverso de earl-grey: fondo crema `#F0EBE2` por defecto, texto oscuro, acentos naranja
-`#EA5A1F`, tipografía XXL pensada para leerse al fondo de la sala a 1280×720. La slide
-`/fire` es la excepción: fondo oscuro con tratamiento de llamas.
+Mismo esqueleto 418/OS oscuro que earl-grey: fondo negro `#0B0B0B` por defecto, texto
+crema `#F0EBE2`, acentos naranja `#EA5A1F`, tipografía XXL pensada para leerse al fondo
+de la sala a 1280×720 (~2x earl-grey). La slide `/fire` se marca con lenguaje de system
+alert (tag naranja/negro, glow, tono de chrome más profundo) en vez de un fondo invertido
+— ya no hay "excepción oscura" posible cuando todo el deck es oscuro.
 
 Sin gate de `prefers-reduced-motion` a propósito (mismo caveat que earl-grey: el Chrome
 de la presentadora lo reporta mal).
