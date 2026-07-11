@@ -19,11 +19,14 @@
 }
 
 /* Opaque designed poster card: no surface frame, just a subtle border so
-   its edge reads against the dark bg. As tall as the viewport allows. */
+   its edge reads against the dark bg. As tall as the viewport comfortably
+   allows: 62vh (not more) because SlideShell's body is overflow:hidden with
+   no scroll fallback at projector width — at 1280×720 the body budget is
+   ~592px and tag (~42px) + gap (24px) + card must leave real slack. */
 .card {
   width: auto;
   height: auto;
-  max-height: min(74vh, 900px);
+  max-height: min(62vh, 754px);
   max-width: min(80vw, 600px);
   object-fit: contain;
   border: 1px solid var(--color-border);
