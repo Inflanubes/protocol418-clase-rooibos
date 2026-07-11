@@ -1,21 +1,17 @@
 /* styles/tokens.css — single source of truth for brand tokens
-   Rooibos theme = inverse of earl-grey's dark deck: cream default background,
-   dark text, orange accents. Kid-brightened per spec (bigger type, lighter
-   surfaces) — this is an Arkeidia artifact, not a brand-guideline artifact. */
+   Rooibos theme = dark 418/OS deck, same base palette as earl-grey: deep
+   black chrome, cream text, orange accent. XXL type scale is Rooibos-
+   specific (kid-legible, back of the room) — everything else mirrors the
+   brand spec / earl-grey deck. This is an Arkeidia artifact, not a
+   brand-guideline artifact. */
 :root {
-  /* Colors — default (cream) */
-  --color-bg:          #F0EBE2;
-  --color-surface:     #FFFFFF;
-  --color-border:      #DDD2BE;
+  /* Colors */
+  --color-bg:          #0B0B0B;
+  --color-surface:     #141414;
+  --color-border:      #1F1F1F;
   --color-accent:      #EA5A1F;
-  --color-text:        #0B0B0B;
+  --color-text:        #F0EBE2;
   --color-text-muted:  #7A7A7A;
-
-  /* Colors — inverse (dark), used only by /fire */
-  --color-bg-inverse:      #0B0B0B;
-  --color-surface-inverse: #1F1F1F;
-  --color-border-inverse:  #1F1F1F;
-  --color-text-inverse:    #F0EBE2;
 
   /* Flame gradient stops (fire slide CSS illustration) */
   --color-flame-core: #FFD27A;
@@ -60,4 +56,12 @@
   --radius:     8px;
   --radius-lg:  12px;
   --radius-xl:  16px;
+}
+
+/* 418/OS — v2.0 (mirror of Website/styles/tokens.css) */
+:root {
+  --color-bg-deep: #050505;
+  --glow-accent: rgba(234, 90, 31, 0.14);
+  --alert-bg: var(--color-accent);
+  --alert-text: #0B0B0B;
 }
