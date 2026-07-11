@@ -23,6 +23,15 @@
   max-height: min(52vh, 480px);
 }
 
+/* Same layout constraints as .frame, but no box: transparent-RGBA art
+   floats directly on the dark slide background. */
+.frameless {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-height: min(52vh, 480px);
+}
+
 .image {
   width: auto;
   height: auto;
@@ -39,5 +48,6 @@
 
 @media (max-width: 720px) {
   .frame { max-height: 38vh; padding: var(--space-4); }
+  .frameless { max-height: 38vh; }
   .image { max-height: 34vh; max-width: 84vw; }
 }

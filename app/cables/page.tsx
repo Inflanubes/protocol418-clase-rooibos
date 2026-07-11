@@ -12,6 +12,7 @@ export default function Page() {
       imageWidth={708}
       imageHeight={894}
       caption="real cables. real sharks."
+      frameless
     />
   );
 }

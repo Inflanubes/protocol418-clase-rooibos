@@ -12,10 +12,16 @@ interface Props {
   imageHeight: number;
   caption: string;
   priority?: boolean;
+  /** Drop the surface box behind the image (keeps size constraints).
+   *  For transparent-RGBA art that should float directly on the dark
+   *  slide (individual Breachlings). Opaque art with a baked background
+   *  (breachlings-grupo) keeps the frame — there it reads as intentional. */
+  frameless?: boolean;
 }
 
 /** Shared "huge image + title + caption" slide pattern — used by /agents,
- *  /cables, /cloud. Almost no text, the visual carries the slide. */
+ *  /cables, /cloud, /breachling-003. Almost no text, the visual carries
+ *  the slide. */
 export function MediaHero({
   framing,
   title,
@@ -25,12 +31,13 @@ export function MediaHero({
   imageHeight,
   caption,
   priority,
+  frameless,
 }: Props) {
   return (
     <SlideShell framing={framing}>
       <div className={styles.stack}>
         <h1 className={`${slideStyles.title} ${styles.title}`}>{title}</h1>
-        <div className={styles.frame}>
+        <div className={frameless ? styles.frameless : styles.frame}>
           <Image
             src={imageSrc}
             alt={imageAlt}

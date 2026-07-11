@@ -12,6 +12,7 @@ export default function Page() {
       imageWidth={1536}
       imageHeight={1024}
       caption="it guesses the next word"
+      frameless
     />
   );
 }
