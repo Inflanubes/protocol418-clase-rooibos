@@ -1,0 +1,132 @@
+/* /anchor is Mission 1's 3rd round: the cable gets CUT but the video still
+   arrives, just slower, via another cable. Unlike /fire (a system-alert:
+   solid orange/black tag, fast flicker, hard stop), this slide is a
+   reroute, not a failure — so the palette stays amber/muted instead of
+   the alert orange, the glow is soft and low-opacity, and the motion (the
+   detour path) is slow, not urgent. Amber reuses --color-flame-core, the
+   same warm gold already in the fire illustration, so it still reads as
+   part of the same 418/OS family without borrowing the alert color. */
+
+.wrap {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-bg-deep);
+  overflow: hidden;
+}
+
+.glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 55%, rgba(255, 138, 61, 0.08), transparent 65%);
+  pointer-events: none;
+}
+
+.stack {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-8);
+  text-align: center;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  background: rgba(255, 210, 122, 0.08);
+  color: var(--color-flame-core);
+  font-family: var(--font-mono);
+  font-size: var(--fs-eyebrow);
+  font-weight: 700;
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  padding: var(--space-2) var(--space-4);
+  border: 1px solid rgba(255, 210, 122, 0.35);
+  border-radius: var(--radius);
+}
+
+.title {
+  color: var(--color-text);
+}
+
+.caption {
+  font-family: var(--font-mono);
+  font-size: var(--fs-body-lg);
+  color: #8A8A8A;
+}
+
+.reroute {
+  position: relative;
+  width: clamp(220px, 30vw, 340px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-6);
+}
+
+/* the severed cable: a solid line with a gap in the middle, marked by two
+   small amber ticks standing in for the frayed/sparking ends */
+.cut {
+  position: relative;
+  width: 62%;
+  height: 6px;
+  border-radius: 3px;
+  background: linear-gradient(
+    90deg,
+    var(--color-text-muted) 0%, var(--color-text-muted) 40%,
+    transparent 40%, transparent 60%,
+    var(--color-text-muted) 60%, var(--color-text-muted) 100%
+  );
+}
+
+.cut::before,
+.cut::after {
+  content: '';
+  position: absolute;
+  top: -7px;
+  width: 3px;
+  height: 20px;
+  border-radius: 2px;
+  background: var(--color-flame-core);
+}
+
+.cut::before {
+  left: calc(40% - 1px);
+  transform: rotate(18deg);
+}
+
+.cut::after {
+  left: calc(60% - 2px);
+  transform: rotate(-18deg);
+}
+
+/* the detour: a longer dashed path curving away underneath — "the long
+   way" the signal takes to reach the server anyway */
+.detour {
+  display: block;
+  width: 92%;
+  height: 34px;
+  border: 2px dashed rgba(255, 210, 122, 0.55);
+  border-top: none;
+  border-radius: 0 0 56px 56px;
+  animation: driftDetour 2400ms ease-in-out infinite alternate;
+}
+
+@keyframes driftDetour {
+  from { opacity: 0.5; }
+  to   { opacity: 0.95; }
+}
+
+/* No reduced-motion block on purpose: presenter's Chrome misreports it — see earl-grey caveat */
+
+@media (max-width: 720px) {
+  .reroute { width: 70vw; }
+  .detour { height: 24px; }
+}
