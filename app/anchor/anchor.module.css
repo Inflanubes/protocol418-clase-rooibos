@@ -36,20 +36,12 @@
   text-align: center;
 }
 
-.tag {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-2);
-  background: rgba(255, 210, 122, 0.08);
+/* boxless "code" prefix — sits inline at the front of the caption like a
+   418/OS log line (the deck's slides are named /fire, /anchor, so a
+   /rerouting slash-route reads as code). No border, no pill, no box. */
+.code {
   color: var(--color-flame-core);
-  font-family: var(--font-mono);
-  font-size: var(--fs-eyebrow);
   font-weight: 700;
-  letter-spacing: var(--tracking-eyebrow);
-  text-transform: uppercase;
-  padding: var(--space-2) var(--space-4);
-  border: 1px solid rgba(255, 210, 122, 0.35);
-  border-radius: var(--radius);
 }
 
 .title {

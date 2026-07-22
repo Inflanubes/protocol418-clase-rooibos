@@ -10,7 +10,6 @@ export default function Page() {
       <div className={styles.glow} aria-hidden="true" />
       <SlideShell framing={slide.framing}>
         <div className={styles.stack}>
-          <span className={styles.tag}>⚓ rerouting…</span>
           <h1 className={`${slideStyles.title} ${styles.title}`}>CABLE BROKEN…</h1>
           <div className={styles.anchor} aria-hidden="true">
             <svg viewBox="0 0 100 124" role="img" aria-hidden="true">
@@ -44,7 +43,9 @@ export default function Page() {
               </g>
             </svg>
           </div>
-          <p className={styles.caption}>…so it goes the long way. Slower.</p>
+          <p className={styles.caption}>
+            <span className={styles.code}>⚓ /rerouting…</span> so it goes the long way. Slower.
+          </p>
         </div>
       </SlideShell>
     </div>
